@@ -1,0 +1,6 @@
+package com.inhatc.cs;
+
+@Controller
+public class CSController {
+	
+}

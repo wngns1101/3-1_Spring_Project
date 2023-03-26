@@ -1,0 +1,13 @@
+package com.inhatc.cs;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class CSController4 {
+	@RequestMapping("doE")
+	public String doE() {
+		System.out.println("doE called");
+		return "~~~~";
+	}
+}
