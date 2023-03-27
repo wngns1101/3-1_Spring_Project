@@ -1,7 +1,0 @@
-package com.inhatc.cs;
-import org.springframework.stereotype.Controller;
-
-@Controller //컨트롤러가 되기 위한 지시자
-public class CSController {
-	
-}
