@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.MembersMapper">
+	<select id="getTime" resultType = "string">
+		select now()
+	</select>
+	
+	<select id="insertMembers">
+		insert into tbl_member (userid, userpw, username, email) values 
+		(#{userid}, #{userpw}, #{username}, #{email})
+	</select>
+	
+	<select id="selectMembers" resultType = "com.inhatc.domain.MembersVO">
+		select * from tbl_member
+		where userid = #{userid}
+	</select>
+	
+	<select id="selectWithPW" resultType = "com.inhatc.domain.MembersVO">
+		select * from tbl_member
+		where userid = #{userid} and userpw = #{userpw}
+	</select>
+	
+	<update id="update">
+		update tbl_member set username = #{username}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_member where userid = #{userid}
+	</delete>
+	
+	<select id="ListAll" resultType ="com.inhatc.domain.MembersVO">
+		<![CDATA[
+		select userid, username, email
+		from tbl_member
+		order by userid asc ]]>
+	</select>
+</mapper>

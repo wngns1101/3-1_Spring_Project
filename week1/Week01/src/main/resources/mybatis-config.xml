@@ -7,7 +7,5 @@
   <typeAliases>
     <package name="com.inhatc.domain"/>    
   </typeAliases>
-
-
 </configuration>
 

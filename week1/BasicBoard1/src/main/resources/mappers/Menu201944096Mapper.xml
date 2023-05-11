@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.inhatc.mappers.Menu201944096Mapper">
+	
+	<insert id="insert">
+		insert into tbl_201944096_menu (id, type, name, price, total) values 
+		(#{id}, #{type}, #{name}, #{price}, #{total})
+	</insert>
+	
+	<select id="select" resultType = "com.inhatc.domain.Menu201944096VO">
+		select * from tbl_201944096_menu
+		where id = #{id}
+	</select>
+	
+	<update id="update">
+		update tbl_201944096_menu set type = #{type}, name = #{name}, price = #{price}, total = #{total}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_201944096_menu where id = #{id}
+	</delete>
+	
+	<select id="ListAll" resultType ="com.inhatc.domain.Menu201944096VO">
+		<![CDATA[
+		select *
+		from tbl_201944096_menu
+		order by id asc ]]>
+	</select>
+</mapper>

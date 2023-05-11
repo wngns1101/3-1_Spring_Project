@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="backup"/>
 <aop-project name="Week01"/>
+<aop-project name="BasicBoard1"/>
 </aop-reference-model>
