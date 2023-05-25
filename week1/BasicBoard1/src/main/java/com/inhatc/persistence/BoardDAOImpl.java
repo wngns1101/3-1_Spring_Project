@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.inhatc.domain.BoardVO;
+import com.inhatc.domain.Criteria;
+import com.mysql.cj.Session;
 
 
 // DAO라는 의미
@@ -45,4 +47,19 @@ public class BoardDAOImpl implements BoardDAO{
 	public List<BoardVO> listAll() throws Exception {
 		return sqlSession.selectList(namespace + ".ListAll");
 	}
+
+	@Override
+	public List<BoardVO> listPage(int page) throws Exception {
+		if(page < 0) {
+			page = 1;
+		}
+		page = (page -1) * 10;
+		return sqlSession.selectList(namespace + ".ListPage", page);
+	}
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		return sqlSession.selectList(namespace + ".ListCriteria", cri);
+	}
+
 }

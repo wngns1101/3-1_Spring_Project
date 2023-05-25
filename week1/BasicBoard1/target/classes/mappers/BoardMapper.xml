@@ -28,8 +28,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<![CDATA[
 		select bno, title, content, writer, regdate, viewcnt
 		from tbl_board
+		where bno > 0]]>
+	</select>
+	
+	<select id="ListPage" resultType ="com.inhatc.domain.BoardVO">
+		<![CDATA[
+		select bno, title, content, writer, regdate, viewcnt
+		from tbl_board
 		where bno > 0
-		order by bno desc, regdate desc]]>
+		order by bno desc, regDate desc
+		limit #{page}, 10]]>
+	</select>
+	
+	<select id="ListCriteria" resultType ="com.inhatc.domain.BoardVO">
+		<![CDATA[
+		select bno, title, content, writer, regdate, viewcnt
+		from tbl_board
+		where bno > 0
+		order by bno desc, regDate desc
+		limit #{pageStart}, #{perPageNum]]>
 	</select>
 	
 </mapper>

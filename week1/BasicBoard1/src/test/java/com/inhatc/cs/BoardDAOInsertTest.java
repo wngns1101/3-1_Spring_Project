@@ -24,9 +24,9 @@ public class BoardDAOInsertTest {
 	@Test
 	public void testInsertMember() throws Exception {
 		BoardVO vo = new BoardVO();
-		vo.setTitle("제목~");
-		vo.setContent("내용~");
-		vo.setWriter("글쓴이");
+		vo.setTitle("제목2");
+		vo.setContent("내용2");
+		vo.setWriter("글쓴이2");
 		dao.create(vo);
 	}
 }
