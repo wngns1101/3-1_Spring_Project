@@ -35,7 +35,7 @@ public class BoardDaoListAll {
 		System.out.println("User id : " + listStudent.get(i).getBno());
 		System.out.println("User type : " + listStudent.get(i).getTitle());
 		System.out.println("User name : " + listStudent.get(i).getWriter());
-		System.out.println("User price : " + listStudent.get(i).getRegDate());
+		System.out.println("User price : " + listStudent.get(i).getRegdate());
 		System.out.println("User total : " + listStudent.get(i).getViewcnt());
 		System.out.println("------------------");
 		}

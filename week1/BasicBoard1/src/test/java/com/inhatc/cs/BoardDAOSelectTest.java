@@ -29,6 +29,6 @@ public class BoardDAOSelectTest {
 		System.out.println("type: " + vo.getTitle());
 		System.out.println("name: " + vo.getViewcnt());
 		System.out.println("price: " + vo.getWriter());
-		System.out.println("total: " + vo.getRegDate());
+		System.out.println("total: " + vo.getRegdate());
 	}
 }

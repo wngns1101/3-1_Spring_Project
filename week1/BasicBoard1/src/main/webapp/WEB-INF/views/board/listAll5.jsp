@@ -27,7 +27,7 @@
 				</td>
 				<td>${boardVO.writer}</td>
 				<td>
-					<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value = "${boardVO.regDate}"/>
+					<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value = "${boardVO.regdate}"/>
 				</td>
 				<td>${boardVO.viewcnt}</td>
 			</tr>

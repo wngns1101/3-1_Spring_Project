@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.inhatc.domain.BoardVO;
 import com.inhatc.domain.Criteria;
+import com.inhatc.domain.SearchCriteria;
 import com.inhatc.persistence.BoardDAO;
 
 @Service
@@ -15,7 +16,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Inject
 	private BoardDAO dao;
-	
+
 	@Override
 	public void regist(BoardVO board) throws Exception {
 		dao.create(board);
@@ -29,13 +30,13 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void modify(BoardVO board) throws Exception {
 		dao.update(board);
-		
+
 	}
 
 	@Override
 	public void remove(int bno) throws Exception {
 		dao.delete(bno);
-		
+
 	}
 
 	@Override
@@ -51,5 +52,22 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int countPaging(Criteria cri) throws Exception {
+		return dao.countPaging(cri);
+	}
+
+	@Override
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+
+		return dao.listSearch(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+
+		return dao.listSearchCount(cri);
 	}
 }
